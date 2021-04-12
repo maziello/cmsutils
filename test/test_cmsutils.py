@@ -8,6 +8,7 @@ def test_GOLDEN_RATIO():
     assert GOLDEN_RATIO == (1 + 5 ** 0.5) / 2, f"Golden ratio value is {GOLDEN_RATIO}, " \
                                                f"should be {(1 + 5 ** 0.5) / 2}"
 
+
 @pytest.mark.parametrize("input_data",
                          [(8075, '2h 14m 35s'),
                           (2374, '39m 34s'),
@@ -46,44 +47,20 @@ def test_time_format(input_data):
 
 
 @pytest.mark.parametrize("input_data",
-                         [(r'F:\Python\cmsutils', ['F:\\Python\\cmsutils\\.idea\\.gitignore',
-                                                   'F:\\Python\\cmsutils\\.idea\\cmsutils.iml',
-                                                   'F:\\Python\\cmsutils\\.idea\\misc.xml',
-                                                   'F:\\Python\\cmsutils\\.idea\\modules.xml',
-                                                   'F:\\Python\\cmsutils\\.idea\\workspace.xml',
-                                                   'F:\\Python\\cmsutils\\.idea\\inspectionProfiles\\profiles_settings.xml',
-                                                   'F:\\Python\\cmsutils\\.idea\\inspectionProfiles\\Project_Default.xml',
-                                                   'F:\\Python\\cmsutils\\cmsutils\\main.py',
-                                                   'F:\\Python\\cmsutils\\cmsutils\\__init__.py',
-                                                   'F:\\Python\\cmsutils\\cmsutils\\__pycache__\\main.cpython-38.pyc',
-                                                   'F:\\Python\\cmsutils\\cmsutils\\__pycache__\\__init__.cpython-38.pyc',
-                                                   'F:\\Python\\cmsutils\\test\\test_cmsutils.py',
-                                                   'F:\\Python\\cmsutils\\test\\__init__.py',
-                                                   'F:\\Python\\cmsutils\\test\\.pytest_cache\\.gitignore',
-                                                   'F:\\Python\\cmsutils\\test\\.pytest_cache\\CACHEDIR.TAG',
-                                                   'F:\\Python\\cmsutils\\test\\.pytest_cache\\README.md',
-                                                   'F:\\Python\\cmsutils\\test\\.pytest_cache\\v\\cache\\lastfailed',
-                                                   'F:\\Python\\cmsutils\\test\\.pytest_cache\\v\\cache\\nodeids',
-                                                   'F:\\Python\\cmsutils\\test\\.pytest_cache\\v\\cache\\stepwise']),
-                          (r'F:\Python\cmsutils', {'extensions': ('.xml')}, ['F:\\Python\\cmsutils\\.idea\\misc.xml',
-                                                                           'F:\\Python\\cmsutils\\.idea\\modules.xml',
-                                                                           'F:\\Python\\cmsutils\\.idea\\workspace.xml',
-                                                                           'F:\\Python\\cmsutils\\.idea\\inspectionProfiles\\profiles_settings.xml',
-                                                                           'F:\\Python\\cmsutils\\.idea\\inspectionProfiles\\Project_Default.xml']),
-                          (r'F:\Python\cmsutils', {'exclusions': ('.xml')}, ['F:\\Python\\cmsutils\\.idea\\.gitignore',
-                                                                           'F:\\Python\\cmsutils\\.idea\\cmsutils.iml',
-                                                                           'F:\\Python\\cmsutils\\cmsutils\\main.py',
-                                                                           'F:\\Python\\cmsutils\\cmsutils\\__init__.py',
-                                                                           'F:\\Python\\cmsutils\\cmsutils\\__pycache__\\main.cpython-38.pyc',
-                                                                           'F:\\Python\\cmsutils\\cmsutils\\__pycache__\\__init__.cpython-38.pyc',
-                                                                           'F:\\Python\\cmsutils\\test\\test_cmsutils.py',
-                                                                           'F:\\Python\\cmsutils\\test\\__init__.py',
-                                                                           'F:\\Python\\cmsutils\\test\\.pytest_cache\\.gitignore',
-                                                                           'F:\\Python\\cmsutils\\test\\.pytest_cache\\CACHEDIR.TAG',
-                                                                           'F:\\Python\\cmsutils\\test\\.pytest_cache\\README.md',
-                                                                           'F:\\Python\\cmsutils\\test\\.pytest_cache\\v\\cache\\lastfailed',
-                                                                           'F:\\Python\\cmsutils\\test\\.pytest_cache\\v\\cache\\nodeids',
-                                                                           'F:\\Python\\cmsutils\\test\\.pytest_cache\\v\\cache\\stepwise'])
+                         [(r'F:\Python\cmsutils\cmsutils',
+                           ['F:\\Python\\cmsutils\\cmsutils\\main.py',
+                            'F:\\Python\\cmsutils\\cmsutils\\__init__.py',
+                            'F:\\Python\\cmsutils\\cmsutils\\__pycache__\\main.cpython-38.pyc',
+                            'F:\\Python\\cmsutils\\cmsutils\\__pycache__\\__init__.cpython-38.pyc'
+                            ]),
+                          (r'F:\Python\cmsutils\cmsutils', {'extensions': ('.py')},
+                           ['F:\\Python\\cmsutils\\cmsutils\\main.py',
+                            'F:\\Python\\cmsutils\\cmsutils\\__init__.py'
+                            ]),
+                          (r'F:\Python\cmsutils\cmsutils', {'exclusions': ('.py')},
+                           ['F:\\Python\\cmsutils\\cmsutils\\__pycache__\\main.cpython-38.pyc',
+                            'F:\\Python\\cmsutils\\cmsutils\\__pycache__\\__init__.cpython-38.pyc',
+                            ])
                           ]
                          )
 def test_getfiles(input_data):
