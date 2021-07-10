@@ -260,7 +260,11 @@ def sign(x):
     1
     >>> sign(-1*a)
     -1
+    >>> sign([1, -1, 0, 1, -1])
+    [1, -1, 0, 1, -1]
     """
+    if isinstance(x, list):
+        return [bool(element > 0) - bool(element < 0) for element in x]
     return bool(x > 0) - bool(x < 0)
 
 

@@ -103,3 +103,11 @@ def test_get_prime_factors_random(input_data):
 def test_sign_random(input_data):
     assert sign(input_data[0]) == input_data[1]
 
+
+@pytest.mark.parametrize("input_data",
+                         [([-1, 0, 1], [-1, 0, 1]),
+                          ([1, 1, 0, -1, -1], [1, 1, 0, -1, -1]),
+                          ([0, 0, 0], [0, 0, 0])]
+                         )
+def test_sign_list(input_data):
+    assert sign(input_data[0]) == input_data[1]

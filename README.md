@@ -13,6 +13,7 @@ Get files from a folder and subfolders, including and/or excluding selected exte
 Calculate prime factors of an integer
 ###sign
 Get the sign of a number: -1 if negative, 1 if positive, 0 if 0
+If the input is a list, returns a list of signs
 ###is_prime
 Calculate if a number is prime
 ### profiling_app
